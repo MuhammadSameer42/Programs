@@ -1,0 +1,20 @@
+def male():
+    m_names =[]
+    with open('Desktop\male.txt','r',encoding='utf-8')as m:
+        for l in m:
+            m_names.append(l)
+    print("Male's Name in Urdu\n")
+    for line in m_names:
+        print(line)
+    return " "
+def female():
+    f_names = []
+    with open('Desktop\list.txt','r',encoding='utf-8') as f:
+        for d in f:
+            f_names.append(d)
+    print("\nFemale's Name in Urdu\n")
+    for line in f_names:
+        print(line)
+    return " "
+print(male(),end=" ")
+print(female(),end=" ")
