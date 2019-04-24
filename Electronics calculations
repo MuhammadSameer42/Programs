@@ -1,0 +1,99 @@
+import math
+import sys
+
+current = []
+resis = []
+power = []
+voltage = []
+print("Enter no. of numericals")
+lim = int(input())
+for n in range(lim):
+    print("Select any one:")
+    print("1-Power & Resistance")
+    print("2-Power & Voltage")
+    print("3-Power & Current")
+    print("4-Current & Resistance")
+    print("5-Voltage & Resistance")
+    print("6-Voltage & Current")
+    print("Which operation you want to perform")
+    sel=int(input())
+    if sel == 1:
+        print("Enter the value of Current")
+        cur = float(input())
+        current.append(cur)
+        print("Enter the value of Voltage")
+        vol = float(input())
+        voltage.append(vol)
+        powerr = cur*vol
+        power.append(powerr)
+        res = vol/cur
+        resis.append(res)
+        print("Power:",powerr,"W")
+        print("Resistance:",res,"Ω")
+    elif sel == 2:
+        print("Enter the value of Current")
+        cur = float(input())
+        current.append(cur)
+        print("Enter the value of Resistance")
+        res = float(input())
+        resis.append(res)
+        powerr = cur*cur*res
+        power.append(powerr)
+        vol = cur*res
+        voltage.append(vol)
+        print("Power:",powerr,"W")
+        print("Voltage:",vol,"V")
+    elif sel == 3:
+        print("Enter the value of Voltage")
+        vol = float(input())
+        voltage.append(vol)
+        print("Enter the value of Resistance")
+        res = float(input())
+        resis.append(res)
+        powerr = (vol*vol)/res
+        power.append(powerr)
+        cur = vol/res
+        current.append(cur)
+        print("Power:",powerr,"W")
+        print("Current:",cur,"I")
+    elif sel == 4:
+        print("Enter the value of Current")
+        cur = float(input())
+        current.append(cur)
+        print("Enter the value of Power")
+        powerr = float(input())
+        power.append(powerr)
+        res = powerr/(cur*cur)
+        resis.append(res)
+        vol = cur*res
+        voltage.append(vol)
+        print("Resistance:",res,"Ω")
+        print("Voltage:",vol,"V")
+    elif sel == 5:
+        print("Enter the value of Voltage")
+        vol = float(input())
+        voltage.append(vol)
+        print("Enter the value of Power")
+        powerr = float(input())
+        power.append(powerr)
+        cur = powerr/vol
+        current.append(cur)
+        res = (vol*vol)/powerr
+        resis.append(res)
+        print("Resistance:",res,"Ω")
+        print("Current:",cur,"I")
+    elif sel == 6:
+        print("Enter the value of Resistance")
+        res = float(input())
+        resis.append(res)
+        print("Enter the value of Power")
+        powerr = float(input())
+        power.append(powerr)
+        vol = math.sqrt(powerr*res)
+        voltage.append(vol)
+        cur = vol/res
+        current.append(cur)
+        print("Voltage:",vol,"V")
+        print("Current:",cur,"I")
+    else:
+        sys.exit()
