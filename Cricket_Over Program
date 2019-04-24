@@ -1,0 +1,46 @@
+balls = []
+r = 6
+for i in range(r):
+    print("Enter Ball",i+1)
+    val=str(input())
+    balls.append(val)
+    l = i
+    while l==i:
+        if val == "wd":
+            k = i
+            while k == i:
+                print("Enter Ball",i+1)
+                val=str(input())
+                balls.append(val)
+                if val != "wd":
+                    break
+        elif val == "nb":
+            k = i
+            while k == i:
+                print("Enter Ball",i+1,"Free Hit")
+                val=str(input())
+                balls.append(val)
+                if val != "nb":
+                    break
+        elif val.find("nb") == 1:
+            k = i
+            while k == i:
+                print("Enter Ball",i+1,"Free Hit")
+                val=str(input())
+                balls.append(val)
+                if val.find("nb") == -1:
+                    break
+        elif val.find("wd") == 1:
+            k = i
+            while k == i:
+                print("Enter Ball",i+1)
+                val=str(input())
+                balls.append(val)
+                if val.find("wd")== -1:
+                    break
+        else:
+            i+=1
+    
+print("This Over")        
+for x in range(len(balls)):
+    print(balls[x], end=" ")
