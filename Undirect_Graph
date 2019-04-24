@@ -1,0 +1,77 @@
+mat = {  "a" : ["b","c"],
+             "b" : ["a","d","e"],
+             "c" : ["a","b"],
+             "d" : ["b","e"],
+             "e" : ["c","f"],
+             "f" : ["a","c","d","e"]
+            }
+def order_pair(mat):
+    edge = []
+    for vertives in mat:
+        for neighbour in mat[vertives]:
+            edge.append((vertives,neighbour)) 
+    return edge
+def matrix():
+    mat = {  "a" : ["b","c",""],
+             "b" : ["a","d","e",""],
+             "c" : ["a","b",""],
+             "d" : ["b","e",""],
+             "e" : ["c","f",""],
+             "f" : ["a","c","d","e",""]
+            }
+    lists = list(mat.keys())
+    l = list(mat.values())
+    i =0
+    j =1
+    k =0
+    print("-  |a |","b |","c |","d |","e |","f |")
+    print("---------------------------")
+    for vertices in mat:
+            for neighbour in mat[vertices]:
+                    print(vertices,end="  |")
+                    for check in lists:
+                        if mat[lists[k]][0] == check:
+                            mat[lists[k]][0] = l[i][j]
+                            print(1,end=" | ")
+                            j+=1
+                        else:
+                            print(0,end=" | ")
+                    j=1
+                    i+=1
+                    k+=1
+                    print("\n---------------------------")
+                    break
+    return " "
+def link_list():
+    m = {  "a" : ["b","c",""],
+             "b" : ["a","d","e",""],
+             "c" : ["a","b",""],
+             "d" : ["b","e",""],
+             "e" : ["c","f",""],
+             "f" : ["a","c","d","e",""]
+            }
+    lists = list(m.keys())
+    l = list(m.values())
+    i =0
+    j =1
+    for vertices in m:
+        for neighbour in m[vertices]:
+                print("|",vertices,"| .",end=" |")
+                for check in lists:
+                    if m[lists[i]][0] == check :
+                        print("---->|",m[lists[i]][0],"| . |",end="")
+                        m[lists[i]][0] = l[i][j]
+                        j+=1
+
+
+                j=1
+                i+=1
+                print("\n")
+                break
+    return " "
+print("MATRIX\n")
+print(matrix())
+print("LINKED LIST\n")
+print(link_list())
+print("ORDERED PAIR\n")
+print(order_pair(mat))
